@@ -18,20 +18,20 @@ public class Main {
 
             if (pilihan >= 1 && pilihan <= 4) {
                 System.out.print("Masukkan angka: ");
-                double angka = scanner.nextDouble();
+                double inputAngka = scanner.nextDouble();
 
                 switch (pilihan) {
                     case 1:
-                        hasil += angka;
+                        hasil += inputAngka;
                         break;
                     case 2:
-                        hasil -= angka;
+                        hasil -= inputAngka;
                         break;
                     case 3:
-                        hasil *= angka;
+                        hasil *= inputAngka;
                         break;
                     case 4:
-                        hasil /= angka;
+                        hasil /= inputAngka;
                         break;
                 }
                 System.out.println("Hasil: " + hasil);
