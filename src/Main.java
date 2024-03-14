@@ -2,37 +2,44 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        boolean Continue = true;
+        double hasil = 0;
         System.out.println("Hello, My name is Hendy Sukandi");
 
-        System.out.println("Kalkulator :");
-        System.out.println("Pilih:\n1.Penjumlahan\n2.Pengurangan\n3.Perkalian\n4.Pembagian\n5.Untuk selesai");
-        System.out.println("Masukan pilihan : ");
+        while (Continue) {
+            System.out.println("Pilih operator:");
+            System.out.println("1. Penjumlahan");
+            System.out.println("2. Pengurangan");
+            System.out.println("3. Perkalian");
+            System.out.println("4. Pembagian");
+            System.out.println("5. Keluar");
 
-        int pilihan = scanner.nextInt();
+            int pilihan = scanner.nextInt();
 
-        System.out.print("Masukkan angka pertama: ");
-        double angka1 = scanner.nextDouble();
-        System.out.print("Masukkan angka kedua: ");
-        double angka2 = scanner.nextDouble();
+            if (pilihan >= 1 && pilihan <= 4) {
+                System.out.print("Masukkan angka: ");
+                double angka = scanner.nextDouble();
 
-        double hasil = 0;
-
-        switch (pilihan) {
-            case 1:
-                hasil = angka1 + angka2;
-                break;
-            case 2:
-                hasil = angka1 - angka2;
-                break;
-            case 3:
-                hasil = angka1 * angka2;
-                break;
-            case 4:
-                hasil = angka1 / angka2;
-            default:
-                System.out.println("Pilihan operator tidak valid.");
+                switch (pilihan) {
+                    case 1:
+                        hasil += angka;
+                        break;
+                    case 2:
+                        hasil -= angka;
+                        break;
+                    case 3:
+                        hasil *= angka;
+                        break;
+                    case 4:
+                        hasil /= angka;
+                        break;
+                }
+                System.out.println("Hasil: " + hasil);
+            } else if (pilihan == 5) {
+                Continue = false;
+            } else {
+                System.out.println("Operator tidak ada dalam pilihan.");
+            }
         }
-
-        System.out.println("Hasil: " + hasil);
     }
 }
